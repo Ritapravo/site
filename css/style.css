@@ -1,0 +1,85 @@
+.navbar .navbar-nav {
+   text-align: center;
+   align-content: center;
+  }
+  
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+/* 
+.carousel-item{
+    height: 700px ;
+} */
+
+body{
+    /* background-color:seashell; */
+    background-image: url("../images/wp8561251.jpg") ;
+}
+
+h2 {
+    text-align:center;
+    font-size: 200%;
+}
+
+.dp{
+    margin: 10%;
+}
+.dp2{
+    margin: 5%;
+}
+
+.image-logo{
+    width: 7%;
+    height: 7%;
+    margin: 1%;
+}
+
+.sp{
+    height:5%;
+}
+
+.modal1{
+    opacity: 100%;
+    background-image: url("../images/bg2.jpg") ;
+}
+
+.bt{
+    margin:1%;
+}
+
+
+img {
+    opacity: 0.9;
+    transition: opacity 1s ease-in-out;
+    transition: transform 1s;
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+}
+img:hover {
+    opacity: 1.0;
+    transform: scale(1.1);
+    transition: opacity .55s ease-in-out;
+    -moz-transition: opacity .55s ease-in-out;
+    -webkit-transition: opacity .55s ease-in-out;
+    
+}​
+
+
+@media(max-width:650px){
+    .dp2{
+        margin: 5%;
+    }
+    .image-logo{
+        width: 0%;
+        height: 0%;
+    }
+    h4{
+        font-size: 100%;
+    }
+    p{
+        font-size: 80%;
+    }
+    h2{
+        font-size: 150%;
+    }
+}

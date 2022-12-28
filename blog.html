@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <title>Ritapravo</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="background-color: transparent;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand centre-align" href="#">
+                <h4>Hii! Welcome to my space.</h4>
+            </a>
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.html"><button type="button"
+                            class="btn btn-outline-light btn-lg">Home</button></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#project"><button type="button"
+                            class="btn btn-outline-light btn-lg">Projects</button></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button type="button" data-toggle="modal" data-target="#hobby "
+                            id="exp" class="btn btn-outline-light btn-lg">Hobbies</button></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#education"><button type="button"
+                            class="btn btn-outline-light btn-lg">Education</button></a>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button type="button" data-toggle="modal" data-target="#registration"
+                            class="btn btn-outline-light btn-lg">Registration</button></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button type="button" data-toggle="modal" data-target="#blogs"
+                            class="btn btn-outline-light btn-lg">Blogs</button></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button type="button" data-toggle="modal" data-target="#myvideo"
+                            class="btn btn-outline-light btn-lg">My Video</button></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <!--======================================= Modal 1 =======================================-->
+
+    <div class="modal fade modal1" id="registration" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="staticBackdropLabel">Hii... I would like to know you more..</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <iframe
+                        src="https://docs.google.com/forms/d/e/1FAIpQLScgAnlx_6dPqcMGa-LujUSswQ3BJcXvEBzfxYgmGWgMtHfujg/viewform?embedded=true"
+                        width="100%" height="673" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--=========================== Modal 2 ====================================-->
+
+    <div class="modal fade " id="hobby" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="staticBackdropLabel">HOBBY SECTION</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body bg-light text-dark" id="modal-body">
+
+                    <h4> Select the Hobbies out of these.</h4>
+                    <tr>
+                        <td> <input type="checkbox" id="check1" name="pl" value="Singing"> -> Singing</td><br>
+                        <td> <input type="checkbox" id="check2" name="pl" value="Cricket"> -> Cricket</td><br>
+                    </tr>
+                    <tr>
+                        <td> <input type="checkbox" id="check3" name="pl" value="Football"> -> Football </td><br>
+                        <td> <input type="checkbox" id="check4" name="pl" value="Gaming"> -> Gaming </td><br>
+                    </tr>
+                    <tr>
+                        <td> <input type="checkbox" id="check5" name="pl" value="Dance"> -> Dance </td><br>
+                        <td> <input type="checkbox" id="check6" name="pl" value="Chill"> -> Chill </td><br>
+                    </tr>
+                    <br> <br>
+                    <button id="btn">Submit</button> <br>
+                    <h4 style="color:green" id="result"></h4>
+
+                    <script>
+                        document.getElementById('btn').onclick = function () {
+                            var linebreak = document.createElement("br");
+                            document.getElementById('btn').disabled = true;
+
+                            document.getElementById("modal-body").append("You have selected: ");
+                            var markedCheckbox = document.getElementsByName('pl');
+                            for (var checkbox of markedCheckbox) {
+                                if (checkbox.checked)
+                                    document.getElementById("modal-body").append(checkbox.value + ' ');
+                            }
+                            document.getElementById("modal-body").append(". ");
+
+                            if (markedCheckbox[0].checked) {
+                                document.getElementById("modal-body").append("          Singing is a great hobby to have.           ");
+                            }
+
+                            if (markedCheckbox[1].checked) {
+                                document.getElementById("modal-body").append('          Cricket is an excellent game and is played in 3 formats- ODI, T20 and Test.            ');
+                            }
+                            if (markedCheckbox[2].checked) {
+                                document.getElementById("modal-body").append('          Football is an excellent game and there are 11 players in each team.           ');
+                            }
+                            if (markedCheckbox[3].checked) {
+                                document.getElementById("modal-body").append('          Gaming will help you relax and increase focusing power.         ');
+                            }
+                            if (markedCheckbox[4].checked) {
+                                document.getElementById("modal-body").append('          Dance is a great hobby and is also a good form of exercise.         ');
+                            }
+                            if (markedCheckbox[5].checked) {
+                                document.getElementById("modal-body").append('          Chilling is the best of all to refresh your mind and enjoy           ');
+                            }
+                        }
+                        function refreshPage() {
+                            location.reload();
+                            document.getElementById("exp").click();
+                        }
+
+                    </script>
+
+
+
+
+                </div>
+                <div class="modal-footer bg-dark">
+
+                    <!-- <button type="button" class="btn btn-primary" 
+                        >Refresh</button> -->
+                    <button type="button" class="btn btn-light " onclick="refreshPage()"
+                        data-dismiss="modal">Refresh</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ======================= MODAL 3 =============================== -->
+    <div class="modal fade " id="myvideo" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="staticBackdropLabel">My music video</h5>
+                    <button type="button" onclick="refreshPage()" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body bg-secondary ">
+                    <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4suTRqMXw3w"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe> -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4suTRqMXw3w"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                        onclick="refreshPage()">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ================CAROUSEL=================== -->
+
+    <!-- <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Hello, this is Ritapravo</h5>
+                    <p>Wellcome to my page...</p>
+                </div>
+                <img src="images/caro2.jpg" class="d-block w-100" alt="...">
+
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div> -->
+
+    <!-- =========================================== -->
+    </br> </br>
+    <h2>About Seedr</h2>
+    <div class="row">
+
+        <div class="col-0 col-sm-0 col-md-1 col-lg-1 item"></div>
+        <div class="col-12 col-sm-5 col-md-3 col-lg-3 item">
+            <div class="card dp">
+                <a href="https://www.linkedin.com/in/ritapravo-sarker" target="_blank"><img
+                        class="card-img-top img-responsive" src="images/seedr.png" alt="Card image cap"></a>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-12 col-sm-7 col-md-7 col-lg-7 item bg-transparent">
+            <div class="bg-transparent dp2">
+                <h5>Seedr provides easy methods to download and transfer files directly without using any external vpn or anything else.</h5>
+                <p>With Seedr, you can download anything when you want it, without the hassle of having to download, unzip, and keep track of multiple files.
+                </br>
+                Using seedr is very easy. Here is a brief description how to get onboard with seedr
+
+                
+                <br>
+
+                    
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========================PROJECTS================================ -->
+
+
+    
+
+    <!-- ===================EDUCATION========================================= -->
+
+    <div class="container" id="education">
+
+    </br> </br>
+    <h2>Getting started</h2>
+    <br>
+
+
+    <div class="row">
+
+        <div class="col-0 col-sm-0 col-md-1 col-lg-1 item"></div>
+        
+
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 item bg-transparent">
+            <div class="bg-transparent dp2">
+                <ul>
+                    <li>Go to the site <a href="https://www.seedr.cc/"> https://www.seedr.cc/</a></li>
+                    <li>Create a personal account using eamil or facebook account</li>
+                    <li>After creating account verify your email/facebook address</li>
+                    <li>After signup is completed, login to <a href="https://www.seedr.cc/">seedr.cc</a></li>
+                    <li>After logging into seedr you can see a textbox on the top right corner, where you can paste the link you want to download.</li>
+                    <li>After pasting the address, the list of files apprears below and you can download your file</li>
+                </ul>
+
+
+            </div>
+
+        </div>
+    </div>
+        <br><br><br>
+        <h2>Seedr benefits</h2>
+        <br><br>
+
+        <table class="table table-striped">
+            <thead>
+                <!-- <tr>
+                    <th scope="col"></th>
+                    
+
+                </tr> -->
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        1. By default seedr provides 2gb free memory to every user. Any file within size 2gb can be downloaded absolutely free.
+                    </th>
+                    
+                </tr>
+                <tr>
+                    <th scope="row">
+                        2. There is also an option to opt for a premium paid service.
+                    </th>
+                    
+                </tr>
+                <tr>
+                    <th scope="row">
+                        3. You can also increase the storage by refering to 4 friends and earn upto 2gb extra.
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        4. Post on twitter or personal blog to get further storage extension.
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+
+        <br><br>
+
+
+        <!-- <ul class="list-unstyled">
+                <li class="media">
+                    <img src="images/pencil-paper-icon-10.jpg" class="mr-3 image-logo" alt="...">
+                    <div class="media-body">
+                        <h4 class="mt-0 mb-1">Master of Technology in Computer Science and Engineering (M.Tech)</h4>
+                        <div class="sp"></div>
+                        <p><b>Indian Institute of Technology Bombay</b> <br> Year: 2021-2024</p>
+
+                    </div>
+                </li>
+                <li class="media my-4">
+                    <img src="images/pencil-paper-icon-10.jpg" class="mr-3 image-logo" alt="...">
+                    <div class="media-body">
+                        <h4 class="mt-0 mb-1">Bachelor of Technology in Computer Science and Engineering(B.Tech)</h4>
+                        <p><b>Kalyani Government Engineering College</b> <br> Year: 2017-2021</p>
+                    </div>
+                </li>
+                <li class="media">
+                    <img src="images/pencil-paper-icon-10.jpg" class="mr-3 image-logo" alt="...">
+                    <div class="media-body">
+                        <h4 class="mt-0 mb-1">Higher Secondary (West Bengal Council For Higher Secondary Education)</h4>
+                        <p><b>Siliguri Baradakanta Vidyapith</b> <br> Year: 2021-2024</p>
+                    </div>
+                </li>
+            </ul> -->
+        <!-- ========================PROJECTS================================ -->
+
+
+    </br> </br>
+    <h2>My Experience with seedr</h2>
+    <br>
+
+
+    <div class="row">
+
+        <div class="col-0 col-sm-0 col-md-1 col-lg-1 item"></div>
+        
+
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 item bg-transparent">
+            <div class="bg-transparent dp2">
+                <ul>
+                    <li><a href="https://www.seedr.cc/"> https://www.seedr.cc/</a> helped me download some files which could not be downloaded using traditional filesystem</li>
+                    <li>Seedr is easy to use because of its good user UI</li>
+                    <li>I have experienced downloading speed of upto 20mBps using seedr</li>
+                    <li>I referred seedr to my friends and now they are using seedr too.</li>
+                </ul>
+
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
